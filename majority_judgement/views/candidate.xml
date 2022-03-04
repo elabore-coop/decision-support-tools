@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="candidate_form_view" model="ir.ui.view">
+        <field name="name">candidate.form.view</field>
+        <field name="model">candidate</field>
+        <field name="priority">0</field>
+        <field name="arch" type="xml">
+            <form string="Candidate">
+                <sheet string="Candidate">
+                    <group name="general_info">
+                        <field name="name" />
+                        <field name="description" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

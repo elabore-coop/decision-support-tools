@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="vote_tree_view" model="ir.ui.view">
+        <field name="name">vote.tree.view</field>
+        <field name="model">vote</field>
+        <field name="priority">0</field>
+        <field name="arch" type="xml">
+            <tree string="Majority Judgement Vote">
+                <field name="name" />
+                <field name="question" />
+                <field name="start_time" />
+                <field name="end_time" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="vote_form_view" model="ir.ui.view">
+        <field name="name">vote.form.view</field>
+        <field name="model">vote</field>
+        <field name="priority">0</field>
+        <field name="arch" type="xml">
+            <form string="Majority Judgement Vote">
+                <sheet string="Majority Judgement Vote">
+                    <group name="general_info">
+                        <field name="name" />
+                        <field name="description" />
+                        <field name="question" />
+                        <field name="start_time" />
+                        <field name="end_time" />
+                    </group>
+                    <notebook>
+                        <page name="candidates" string="Candidates">
+                            <field name="candidate_ids" create="true">
+                                <tree default_order="name">
+                                    <field name="name" />
+                                    <field name="description" />
+                                </tree>
+                            </field>
+                        </page>
+                        <page name="grades" string="Grades">
+                            <field name="grade_ids" create="true">
+                                <tree default_order="name">
+                                    <field name="name" />
+                                    <field name="color" />
+                                </tree>
+                            </field>
+                        </page>
+                        <page name="voters" string="Voters">
+                            <field name="voter_ids" create="true">
+                                <tree default_order="name">
+                                    <field name="partner_id" />
+                                    <field name="has_voted" />
+                                    <field name="vote_timestamp" />
+                                </tree>
+                            </field>
+                        </page>
+                        <page name="results" string="Results"></page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

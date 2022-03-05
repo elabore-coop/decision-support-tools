@@ -20,6 +20,11 @@
         <field name="priority">0</field>
         <field name="arch" type="xml">
             <form string="Majority Judgement Vote">
+                <header>
+                    <button name="action_open_vote" string="Open vote" type="object" attrs="{'invisible':[('state','!=','draft')]}" class="oe_highlight" />
+                    <button name="action_close_vote" string="Close vote" type="object" attrs="{'invisible':[('state','!=','opened')]}" class="oe_highlight" />
+                    <field name="state" widget="statusbar" nolabel="1" statusbar_visible="draft,opened,closed" />
+                </header>
                 <sheet string="Majority Judgement Vote">
                     <group name="general_info">
                         <field name="name" />

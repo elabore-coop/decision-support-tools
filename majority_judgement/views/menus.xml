@@ -12,9 +12,23 @@
         </field>
     </record>
 
+    <record model="ir.actions.act_window" id="action_view_grade_models_list">
+        <field name="name">Grade Models</field>
+        <field name="res_model">grade.model</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a grade model
+            </p>
+        </field>
+    </record>
+
     <menuitem id="majority_judgement_menu_root" name="Majority Judgements" sequence="60" web_icon="majority_judgement,static/description/icon.png" />
 
-    <menuitem id="majority_judgement_men" name="Majority Judgements" parent="majority_judgement_menu_root" sequence="1" action="action_view_vote_list" />
+    <menuitem id="majority_judgement_menu" name="Majority Judgements" parent="majority_judgement_menu_root" sequence="1" action="action_view_vote_list" />
+    <menuitem id="majority_judgement_configuration_menu" name="Configuration" parent="majority_judgement_menu_root" sequence="2" />
+    <menuitem id="majority_judgement_grade_models_menu" name="Grade Models" parent="majority_judgement_configuration_menu" sequence="1" action="action_view_grade_models_list" />
 
 
 </odoo>

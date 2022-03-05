@@ -61,6 +61,7 @@ This module is maintained by ELABORE.
     "data": [
         "views/vote.xml",
         "views/candidate.xml",
+        "views/grade_model.xml",
         "views/menus.xml",
         "security/ir.model.access.csv",
     ],

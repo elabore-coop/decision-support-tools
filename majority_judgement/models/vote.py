@@ -26,6 +26,25 @@ class MajorityJudgementVote(models.Model):
         copy=False,
     )
 
+    @api.model
+    def create(self, values):
+        record = super(MajorityJudgementVote, self).create(values)
+        record.generate_default_grades()
+        return record
+
+    def generate_default_grades(self):
+        for grade in self.grade_ids:
+            grade.unlink()
+        grade_models = self.env["grade.model"].search([])
+        for model in grade_models:
+            vals = {
+                "name": model.name,
+                "color": model.color,
+                "sequence": model.sequence,
+                "vote_id": self.id,
+            }
+            self.env["grade"].create(vals)
+
     def action_open_vote(self):
         self.state = "opened"
 

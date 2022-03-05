@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="grade_model_tree_view" model="ir.ui.view">
+        <field name="name">grade.model.tree.view</field>
+        <field name="model">grade.model</field>
+        <field name="priority">0</field>
+        <field name="arch" type="xml">
+            <tree string="Grade Models" editable="top">
+                <field name="sequence" widget="handle" />
+                <field name="name" />
+                <field name="color" />
+            </tree>
+        </field>
+    </record>
+
+</odoo>

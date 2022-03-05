@@ -44,11 +44,13 @@
                         </page>
                         <page name="grades" string="Grades">
                             <field name="grade_ids" create="true">
-                                <tree default_order="name">
+                                <tree default_order="sequence">
+                                    <field name="sequence" widget="handle" />
                                     <field name="name" />
                                     <field name="color" />
                                 </tree>
                             </field>
+                            <button name="generate_default_grades" string="Re-initialize" class="oe_highlight" type="object" />
                         </page>
                         <page name="voters" string="Voters">
                             <field name="voter_ids" create="true">

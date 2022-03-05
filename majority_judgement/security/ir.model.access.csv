@@ -2,4 +2,5 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_vote_manager,access_vote_manager,model_vote,base.group_user,1,1,1,1
 access_voter_manager,access_voter_manager,model_voter,base.group_user,1,1,1,1
 access_grade_manager,access_grade_manager,model_grade,base.group_user,1,1,1,1
+access_grade_model_manager,access_grade_model_manager,model_grade_model,base.group_user,1,1,1,1
 access_candidate_manager,access_candidate_manager,model_candidate,base.group_user,1,1,1,1

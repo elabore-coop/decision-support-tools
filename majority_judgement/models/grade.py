@@ -9,6 +9,7 @@ class MajorityJudgementGradeModel(models.Model):
 
     name = fields.Char(string=_("Name"), required=True)
     color = fields.Integer("Color Index", default=0)
+    sequence = fields.Integer()
 
 
 class MajorityJudgementGrade(models.Model):
@@ -17,4 +18,5 @@ class MajorityJudgementGrade(models.Model):
 
     name = fields.Char(string=_("Name"), required=True)
     color = fields.Integer("Color Index", default=0)
+    sequence = fields.Integer()
     vote_id = fields.Many2one("vote", string=_("Vote"))
